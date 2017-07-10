@@ -1,4 +1,4 @@
-LOCAL_PATH:= device/xiaomi/markw/crypto
+LOCAL_PATH:= device/xiaomi/santoni/crypto
 include $(CLEAR_VARS)
 
 LOCAL_PROPRIETARY_MODULE := true
