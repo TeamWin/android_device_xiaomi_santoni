@@ -14,21 +14,20 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-# Encryption
-PRODUCT_PACKAGES += \
-    libcryptfs_hw
-
 # Kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/kernel:kernel
+
+# sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := santoni
 PRODUCT_NAME := full_santoni
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 4
+PRODUCT_MODEL := Redmi 4X
 PRODUCT_MANUFACTURER := Xiaomi
