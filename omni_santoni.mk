@@ -14,9 +14,10 @@
 # limitations under the License.
 #
 
-# Specify phone tech before including full_phone
+# Specify phone tech before including full_device.mk.
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
+# Inherit from santoni device.
 $(call inherit-product, device/xiaomi/santoni/full_santoni.mk)
 
 # Inherit some common Omni stuff.
